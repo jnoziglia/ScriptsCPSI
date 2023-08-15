@@ -13,7 +13,7 @@ for folder in folders:
 
     data = []
     for fname in mat_files:
-        mat = scipy.io.loadmat(fname, struct_as_record=False, squeeze_me=True)git st
+        mat = scipy.io.loadmat(fname, struct_as_record=False, squeeze_me=True)
         val = mat['ECG'].data[1]
         (hard_peaks, soft_peaks) = processing.find_peaks(sig=val)
         print(soft_peaks)
