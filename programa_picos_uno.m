@@ -3,7 +3,7 @@ close all;
 clear;
 %archivos = dir('*.mat');
 %%load('A1440.mat');
-load('A1016.mat');
+load('A0113.mat');
 fs=500;
 %val=val*(-1);
 % prom= mean(val);
@@ -28,7 +28,7 @@ canal2=filloutliers(canal2_filt, "next","percentiles",[0.5 99.5]);
 
 t = (1:1:length(canal2));
 % fs=360;
- lim_y = 0.3*max(abs(canal2));
+ lim_y = 0.5*max(abs(canal2));
 %  lim_y2 = 0.8*max(abs(val_resc));
  lim_x = fs/3;
 %  lim_ys = 0.8*max(abs(val_stand));
