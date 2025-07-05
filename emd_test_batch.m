@@ -134,20 +134,6 @@ mean_freq_fib = mean(freq_fib_mat, 1);
 std_energy_fib = std(energy_fib_mat, 1);
 std_freq_fib = std(freq_fib_mat, 1);
 
-x = 1:length(archivos_norm);
-figure(1)
-scatter(x, mean_energy_norm)
-hold
-y = 1:length(archivos_fib);
-scatter(y, mean_energy_fib)
-
-x = 1:length(archivos_norm);
-figure(2)
-scatter(x, mean_freq_norm)
-hold
-y = 1:length(archivos_fib);
-scatter(y, mean_freq_fib)
-
 % x = 1:length(archivos_fib);
 % figure(3)
 % scatter(x, mean_energy_fib)
@@ -188,4 +174,23 @@ error_ener_fib = std_energy_fib_val / sqrt(length(archivos_fib));
 
 error_freq_norm = std_freq_norm_val / sqrt(length(archivos_norm));
 error_freq_fib = std_freq_fib_val / sqrt(length(archivos_fib));
+
+
+x = 1:length(archivos_norm);
+figure(2)
+scatter(mean_freq_norm', areas_norm)
+hold on
+y = 1:length(archivos_fib);
+scatter(mean_freq_fib', areas_fib)
+ylabel('Área')
+xlabel('Frecuencia (Hz)')
+
+x = 1:length(archivos_norm);
+figure(3)
+scatter(mean_energy_norm', areas_norm)
+hold on
+y = 1:length(archivos_fib);
+scatter(mean_energy_fib', areas_fib)
+ylabel('Área')
+xlabel('Energía instantánea')
 
